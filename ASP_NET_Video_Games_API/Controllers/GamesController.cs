@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_NET_Video_Games_API.Controllers
 {
-    // api/examples
     [Route("api/[controller]")]
     [ApiController]
-    public class ExamplesController : ControllerBase
+    public class GamesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public ExamplesController(ApplicationDbContext context)
+        public GamesController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -34,5 +33,11 @@ namespace ASP_NET_Video_Games_API.Controllers
             return Ok(videoGames);
         }
 
+        [HttpGet("{id}")] 
+        public IActionResult GetGamesById(int id)
+        {
+            var videoGames = _context.VideoGames.Where(vg => vg.Id == id);
+            return Ok(videoGames);
+        }
     }
 }
