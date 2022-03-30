@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "f676f65d-5bfb-4236-a205-f17b34a0593e",
+		"name": "Video_Games_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET_Publishers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7260/api/examples",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"api",
+						"examples"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Games_By_Publisher",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7260/api/examples/Activision",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"api",
+						"examples",
+						"Activision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_All_Records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7260/api/games",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"api",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Game_By_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7260/api/games/808",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"api",
+						"games",
+						"808"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
