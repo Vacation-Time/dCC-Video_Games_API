@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_NET_Video_Games_API.Controllers
 {
+    // api/Games
     [Route("api/[controller]")]
     [ApiController]
     public class GamesController : ControllerBase
@@ -16,21 +17,11 @@ namespace ASP_NET_Video_Games_API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPublishers()
+        public IActionResult GetAllRecords()
         {
-            var videoGamePublishers = _context.VideoGames.Select(vg => vg.Publisher).Distinct();
+            var videoGameAllRecords = _context.VideoGames;
 
-            return Ok(videoGamePublishers);
-        }
-
-        [HttpGet("{pubName}")] // this is a 'get by id' example
-        public IActionResult GetGamesByPublisher(string pubName)
-        {
-            int? maxYear = _context.VideoGames.Select(vg => vg.Year).Max(); //added from tutorial for years between search
-            int? minYear = _context.VideoGames.Select(vg => vg.Year).Min();
-
-            var videoGames = _context.VideoGames.Where(vg => vg.Publisher == pubName);
-            return Ok(videoGames);
+            return Ok(videoGameAllRecords);
         }
 
         [HttpGet("{id}")] 
